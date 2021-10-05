@@ -11,16 +11,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
         .title-heading {
             font-family: 'Questrial', sans-serif;
             font-weight: bold;
             margin: 20px !important;
+            
         }
 
         body {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             margin: 45px;
+            background-color: #f3f6f4;
+        }
+        .example-container{
+            background-color: #b4b3cc;
+            padding: 10px;
+            width: 300px;
+            border: #b4b3cc solid 2px;
+            border-radius: 5px;
+        }
+        .example-heading{
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+        }
+        .answer-container{
+            padding: 5px;
+            background-color: #e8e6ed;
+            width: fit-content;
         }
     </style>
     <script>
@@ -44,14 +65,44 @@
         <p class="example-statement">Angka Ganjil:</p>
         <p class="example-number">(1, 3, 5, 7, 9, 11, 13, 15)</p>
         <p class="example-question">Dimanakah angka 7?</p>
-        <button type="button" class="btn btn-primary" id="no1">Jawaban</button>
-        <p id=j1></p>
+        <div class="answer-container">
+            <button type="button" class="btn btn-primary" id="no1">Jawaban</button>
+            <p id=j1></p>
+        </div>
         <script>
             const ganjil = [1, 3, 5, 7, 9, 11, 13, 15];
             var a = linearSearch(ganjil, 7);
-            document.getElementById("no1").onclick = function(){
+            document.getElementById("no1").onclick = function () {
                 // alert("Ada di index ke-"+a);
-                document.getElementById("j1").innerHTML = "Ada di index ke-"+a;
+                if (a == -1) {
+                    document.getElementById("j1").innerHTML = "Tidak ditemukan";
+                } else {
+                    document.getElementById("j1").innerHTML = "Ada di index ke-" + a;
+                }
+            }
+        </script>
+    </div>
+    <br>
+    <hr>
+    <div class="example-container">
+        <h2 class="example-heading">Contoh 2</h2>
+        <p class="example-statement">Angka Ganjil:</p>
+        <p class="example-number">(1, 3, 5, 7, 9, 11, 13, 15)</p>
+        <p class="example-question">Dimanakah angka 8?</p>
+        <div class="answer-container">
+            <button type="button" class="btn btn-primary" id="no2">Jawaban</button>
+            <p id=j2></p>
+        </div>
+        <script>
+            const ganjil1 = [1, 3, 5, 7, 9, 11, 13, 15];
+            var b = linearSearch(ganjil1, 8);
+            document.getElementById("no2").onclick = function () {
+                // alert("Ada di index ke-"+a);
+                if (b == -1) {
+                    document.getElementById("j2").innerHTML = "Tidak ditemukan";
+                } else {
+                    document.getElementById("j2").innerHTML = "Ada di index ke-" + b;
+                }
             }
         </script>
     </div>
